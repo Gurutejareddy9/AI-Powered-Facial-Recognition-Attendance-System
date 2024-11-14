@@ -87,12 +87,12 @@ def get_attendance():
             id, pred = clf.predict(gray_img[y:y+h, x:x+w])
             confidence = int(100 * (1 - pred / 300))
             
-            if confidence > 80:
+            if confidence > 80: # Change the Confidence level Accordingly
                 name = "UNKNOWN"
                 if id == 1:
-                    name = "GURUTEJA"
+                    name = "USER1"
                 elif id == 2:
-                    name = "LOKESH"
+                    name = "USER2"
                 
                 # Check if the name has not been added before, then record it
                 if name != "UNKNOWN" and name not in detected_names:
